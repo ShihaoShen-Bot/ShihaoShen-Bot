@@ -26,6 +26,6 @@ jobs:
       # Make sure GH CLI is configured correctly
       - name: Install and Initalize GitHub CLI
         run: |
-          echo ${{ secrets.GITHUB_TOKEN }} > token.txt
+          echo ${{ secrets.BOT_TOKEN }} > token.txt
           gh auth login --with-token < token.txt
           gh auth status
