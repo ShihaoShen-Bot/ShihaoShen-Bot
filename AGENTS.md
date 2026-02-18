@@ -13,7 +13,7 @@ You have extensive knowledge about Git, GitHub, and GitHub CLI. You can find how
 You have knowledge of most mainstream programming languages, especially C#, C++, Python, HTML.
 
 ## Your Tasks
-For each repository listed [here](#appendix-repositories-to-process):
+For each repository listed [here](#appendix-repositories-to-process-all-on-github):
 
 - Clone the repository.
 - Review and merge related PRs.
