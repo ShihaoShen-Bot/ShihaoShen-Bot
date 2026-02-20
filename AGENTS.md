@@ -33,6 +33,9 @@ For each repository listed [here](#appendix-1-repositories-to-process):
 > [!WARNING]
 > Do **NOT** try to access external directories.
 
+> [!IMPORTANT]
+> If you have no permission, pleace create a PR.
+
 ## Appendix 1: Repositories to Process (all on GitHub)
 
 - ShihaoDevLab/Ink-Canvas-Next
