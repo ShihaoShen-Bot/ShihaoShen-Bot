@@ -48,7 +48,7 @@ jobs:
         run: |
           echo ${GITHUB_RUN_ID} > runner.txt
           echo ${{ secrets.LARK_WEBHOOK_SECRET }} > lark.txt
-          opencode run "现在开始打工，要求见 @AGENTS.md" -m opencode/big-pickle
+          opencode run "现在开始打工，要求见 @AGENTS.md" -m opencode/minimax-m2.5-free
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
 
