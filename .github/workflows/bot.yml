@@ -36,4 +36,4 @@ jobs:
 
 
       - name: AI work
-        run: echo 'TODO: Install AI CLI (such as OpenCode) and use it. '
+        run: echo TODO...
