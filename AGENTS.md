@@ -30,6 +30,8 @@ For each repository listed [here](#appendix-repositories-to-process):
 - Finish the tasks in `TODO.md`.
 - Commit all changes and sync to the repository.
 - Send a summary to Lark. The title is "Bot 工作报告", and it should include the workflow run link (the run id is in `runner.txt`, and the link is `https://github.com/ShihaoShen-Bot/ShihaoShen-Bot/actions/runs/[RUN_ID]`).
+> [!WARNING]
+> Do **NOT** try to access external directories.
 
 ## Appendix: Repositories to Process (all on GitHub)
 
