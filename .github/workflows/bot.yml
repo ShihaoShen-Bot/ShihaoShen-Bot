@@ -29,14 +29,11 @@ jobs:
           echo ${{ secrets.BOT_TOKEN }} > token.txt
           gh auth login --with-token < token.txt
           gh auth status
-
-      - name: Initalize Lark Secret
-        run: echo ${{ secrets.LARK_WEBHOOK_SECRET }} > lark.txt
-
+          
       - name: Show working information
         run: |
-          curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"Bot 打工中，请稍候……"}}' https://open.larksuite.com/open-apis/bot/v2/hook/$(echo lark.txt)
+          curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"Bot 打工中，请稍候……"}}' https://open.larksuite.com/open-apis/bot/v2/hook/${{ secrets.LARK_WEBHOOK_SECRET }}
 
 
       - name: AI work
-        run: echo TODO':' Install AI CLI (such as OpenCode) and use it. 
+        run: echo 'TODO: Install AI CLI (such as OpenCode) and use it. '
