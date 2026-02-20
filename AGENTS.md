@@ -34,3 +34,5 @@ For each repository listed [here](#appendix-repositories-to-process):
 ## Appendix: Repositories to Process (all on GitHub)
 
 - ShihaoDevLab/Ink-Canvas-Next
+- ShihaoDevLab/WorkBoard-PreAlpha
+- ShihaoShenDev/WindyNote
