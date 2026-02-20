@@ -30,9 +30,9 @@ jobs:
           gh auth login --with-token < token.txt
           gh auth status
           
-      - name: Show working information
-        run: |
-          curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"Bot 打工中，请稍候……（爱来自GitHub Actions）"}}' https://open.larksuite.com/open-apis/bot/v2/hook/${{ secrets.LARK_WEBHOOK_SECRET }}
+      # - name: Show working information
+      #   run: |
+      #     curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"Bot 打工中，请稍候……（爱来自GitHub Actions）"}}' https://open.larksuite.com/open-apis/bot/v2/hook/${{ secrets.LARK_WEBHOOK_SECRET }}
       
       - name: Install and initalize OpenCode
         run: |
@@ -47,6 +47,6 @@ jobs:
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
 
-      - name: Finish work information
-        run: |
-          curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"Bot 打工完成。前往 https://github.com/ShihaoShen-Bot/ShihaoShen-Bot/actions/workflows/bot.yml 获取更多信息。"}}' https://open.larksuite.com/open-apis/bot/v2/hook/${{ secrets.LARK_WEBHOOK_SECRET }}
+      # - name: Finish work information
+      #   run: |
+      #     curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"Bot 打工完成。前往 https://github.com/ShihaoShen-Bot/ShihaoShen-Bot/actions/workflows/bot.yml 获取更多信息。"}}' https://open.larksuite.com/open-apis/bot/v2/hook/${{ secrets.LARK_WEBHOOK_SECRET }}
