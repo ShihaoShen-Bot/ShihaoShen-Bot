@@ -32,8 +32,12 @@ jobs:
           
       - name: Show working information
         run: |
-          curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"Bot 打工中，请稍候……"}}' https://open.larksuite.com/open-apis/bot/v2/hook/${{ secrets.LARK_WEBHOOK_SECRET }}
+          curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"Bot 打工中，请稍候……（爱来自GitHub Actions）"}}' https://open.larksuite.com/open-apis/bot/v2/hook/${{ secrets.LARK_WEBHOOK_SECRET }}
 
 
       - name: AI work
         run: echo TODO...
+
+      - name: Finish work information
+        run: |
+          curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"Bot 打工完成。前往 https://github.com/ShihaoShen-Bot/ShihaoShen-Bot/actions/workflows/bot.yml 获取更多信息。"}}' https://open.larksuite.com/open-apis/bot/v2/hook/${{ secrets.LARK_WEBHOOK_SECRET }}
