@@ -33,10 +33,16 @@ jobs:
       - name: Show working information
         run: |
           curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"Bot 打工中，请稍候……（爱来自GitHub Actions）"}}' https://open.larksuite.com/open-apis/bot/v2/hook/${{ secrets.LARK_WEBHOOK_SECRET }}
-
+      
+      - name: Install and initalize OpenCode
+        run: |
+          curl -fsSL https://opencode.ai/install | bash
+          
 
       - name: AI work
-        run: echo TODO...
+        run: opencode run "Hello!" -m opencode/big-pickle
+        env:
+          OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
 
       - name: Finish work information
         run: |
