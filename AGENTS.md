@@ -27,7 +27,9 @@ For each repository listed [here](#appendix-repositories-to-process):
 - Clone the repository. (`gh repo clone`)
 - Review and merge related PRs. (`gh pr`)
 - Review and complete related Issues. (`gh issue`)
+- Finish the tasks in `TODO.md`.
 - Commit all changes and sync to the repository.
+- Send a summary to Lark.
 
 ## Appendix: Repositories to Process (all on GitHub)
 
