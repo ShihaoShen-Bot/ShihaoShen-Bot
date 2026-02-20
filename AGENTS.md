@@ -22,19 +22,45 @@ curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content
 You have knowledge of most mainstream programming languages, especially C#, C++, Python, HTML.
 
 ## Your Tasks
-For each repository listed [here](#appendix-repositories-to-process):
+For each repository listed [here](#appendix-1-repositories-to-process):
 
 - Clone the repository. (`gh repo clone`)
 - Review and merge related PRs. (`gh pr`)
 - Review and complete related Issues. (`gh issue`)
 - Finish the tasks in `TODO.md`.
-- Commit all changes and sync to the repository.
+- Commit all changes and sync to the repository (push using GitHub CLI).
 - Send a summary to Lark. The title is "Bot 工作报告", and it should include the workflow run link (the run id is in `runner.txt`, and the link is `https://github.com/ShihaoShen-Bot/ShihaoShen-Bot/actions/runs/[RUN_ID]`).
 > [!WARNING]
 > Do **NOT** try to access external directories.
 
-## Appendix: Repositories to Process (all on GitHub)
+## Appendix 1: Repositories to Process (all on GitHub)
 
 - ShihaoDevLab/Ink-Canvas-Next
 - ShihaoDevLab/WorkBoard-PreAlpha
 - ShihaoShenDev/WindyNote
+- ShihaoShenDev/Ink-Canvas-Sodium
+
+## Appendix 2: Summary Example
+```
+Bot 工作报告
+
+仓库: ShihaoDevLab/Ink-Canvas-Next
+
+处理状态:
+- PRs: xxx
+- Issues: xxx
+- TODO: xxx
+- （可选：补充内容）
+
+仓库: ShihaoShenDev/Ink-Canvas-Sodium
+
+处理状态:
+- PRs: xxx
+- Issues: xxx
+- TODO: xxx
+- （可选：补充内容）
+
+……（其他仓库略）
+
+Workflow Run: https://github.com/ShihaoShen-Bot/ShihaoShen-Bot/actions/runs/xxx
+```
