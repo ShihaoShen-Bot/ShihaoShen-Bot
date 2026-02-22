@@ -25,6 +25,8 @@ You have knowledge of most mainstream programming languages, especially C#, C++,
 
 You know a lot about and follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+You know how to use OpenSpec. If OpenSpec is initialized in the repository correctly, use it.
+
 ## Your Tasks
 For each repository listed [here](#appendix-1-repositories-to-process):
 
