@@ -18,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install and Initalize GitHub CLI
+      - name: Initialize GitHub CLI
         run: |
           echo ${{ secrets.BOT_TOKEN }} > token.txt
           gh auth login --with-token < token.txt # 这太逆天了
@@ -32,7 +32,7 @@ jobs:
       # - name: Install OpenCode for Windows
       #   run: npm i -g opencode-ai
       
-      - name: Install and initalize OpenCode
+      - name: Install and initialize OpenCode
         run: curl -fsSL https://opencode.ai/install | bash
 
       - name: Enable OpenSpec for supported repositories
