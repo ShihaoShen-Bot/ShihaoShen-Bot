@@ -28,6 +28,8 @@ jobs:
       - name: Install and initalize OpenCode
         run: curl -fsSL https://opencode.ai/install | bash
 
+      - name: Enable OpenSpec for supported repositories
+        run: npm install -g @fission-ai/openspec@latest
       # Available Free OpenCode-hosted Models: (Updated on 2/20/2026)
       # big-pickle (Always free)
       # glm-5-free
