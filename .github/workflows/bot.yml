@@ -8,7 +8,7 @@ on:
 
 jobs:
   bot:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest # 试试看吧，不行就换回linux
     steps:
     
       - name: Checkout
@@ -24,9 +24,14 @@ jobs:
       # - name: Show working information
       #   run: |
       #     curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"Bot 打工中，请稍候……（爱来自GitHub Actions）"}}' https://open.larksuite.com/open-apis/bot/v2/hook/${{ secrets.LARK_WEBHOOK_SECRET }}
+
+      - name: Install OpenCode for Windows
+        run: npm i -g opencode-ai
       
-      - name: Install and initalize OpenCode
-        run: curl -fsSL https://opencode.ai/install | bash
+      # Unavailable for Windows.
+
+      # - name: Install and initalize OpenCode
+      #   run: curl -fsSL https://opencode.ai/install | bash
 
       - name: Enable OpenSpec for supported repositories
         run: npm install -g @fission-ai/openspec@latest
