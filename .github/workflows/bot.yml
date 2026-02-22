@@ -1,14 +1,18 @@
 name: Bot Actions
 
 on:
+
   schedule:
     - cron: "0 4 * * 0,3"
 
   workflow_dispatch:
 
 jobs:
+
   bot:
-    runs-on: windows-latest # 试试看吧，不行就换回linux
+  
+    runs-on: ununtu-latest
+    
     steps:
     
       - name: Checkout
@@ -25,16 +29,15 @@ jobs:
       #   run: |
       #     curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"Bot 打工中，请稍候……（爱来自GitHub Actions）"}}' https://open.larksuite.com/open-apis/bot/v2/hook/${{ secrets.LARK_WEBHOOK_SECRET }}
 
-      - name: Install OpenCode for Windows
-        run: npm i -g opencode-ai
+      # - name: Install OpenCode for Windows
+      #   run: npm i -g opencode-ai
       
-      # Unavailable for Windows.
-
-      # - name: Install and initalize OpenCode
-      #   run: curl -fsSL https://opencode.ai/install | bash
+      - name: Install and initalize OpenCode
+        run: curl -fsSL https://opencode.ai/install | bash
 
       - name: Enable OpenSpec for supported repositories
         run: npm install -g @fission-ai/openspec@latest
+        
       # Available Free OpenCode-hosted Models: (Updated on 2/20/2026)
       # big-pickle (Always free)
       # glm-5-free
