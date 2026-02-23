@@ -37,6 +37,9 @@ jobs:
 
       - name: Enable OpenSpec for supported repositories
         run: npm install -g @fission-ai/openspec@latest
+
+      - name: Enable Spec Kit for supported repositories
+        run: uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
         
       # Available Free OpenCode-hosted Models: (Updated on 2/20/2026)
       # big-pickle (Always free)
