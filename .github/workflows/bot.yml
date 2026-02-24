@@ -3,7 +3,7 @@ name: Bot Actions
 on:
 
   schedule:
-    - cron: "0 4 * * 0,3"
+    - cron: "11 4 * * *" # 《暗藏玄机》
 
   workflow_dispatch:
 
@@ -53,7 +53,7 @@ jobs:
         run: |
           echo ${GITHUB_RUN_ID} > runner.txt
           echo ${{ secrets.LARK_WEBHOOK_SECRET }} > lark.txt
-          opencode run "现在开始打工，要求见 @AGENTS.md" -m opencode/glm-5-free
+          opencode run "现在开始打工，要求见 @AGENTS.md" -m opencode/big-pickle
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
 
