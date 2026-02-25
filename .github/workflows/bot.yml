@@ -3,7 +3,7 @@ name: Bot Actions
 on:
 
   schedule:
-    - cron: "11 4 * * *" # 《暗藏玄机》
+    - cron: "11 4 * * 0,3" # 《暗藏玄机》
 
   workflow_dispatch:
 
