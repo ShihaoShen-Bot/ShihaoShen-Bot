@@ -32,16 +32,17 @@ jobs:
       # - name: Install OpenCode for Windows
       #   run: npm i -g opencode-ai
       
-      - name: Install and initialize OpenCode
-        run: curl -fsSL https://opencode.ai/install | bash
+      - name: Install and initialize AI Code CLI
+        run: | 
+          # curl -fsSL https://opencode.ai/install | bash
+          npm install -g @github/copilot
 
-      - name: Enable OpenSpec for supported repositories
-        run: npm install -g @fission-ai/openspec@latest
-
-      ## Spec Kit is temporarily unavailable.
-      # - name: Enable Spec Kit for supported repositories
-      #   run: uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
-        
+      - name: Enable Spec tools for supported repositories
+        run: |
+          npm install -g @fission-ai/openspec@latest
+          ## Spec Kit is temporarily unavailable.
+          # uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
+      
       ## Available Free OpenCode-hosted Models: (Updated on 2/20/2026)
       ## big-pickle (Always free)
       ## glm-5-free
