@@ -45,15 +45,14 @@ jobs:
       
       ## Available Free OpenCode-hosted Models: (Updated on 2/20/2026)
       ## big-pickle (Always free)
-      ## minimax-m2.5-free
-      ## trinity-large-preview-free
       ## gpt-5-nano (?)
+      ## 算了，不更新了
       
       - name: AI work
         run: |
           echo ${GITHUB_RUN_ID} > runner.txt
           echo ${{ secrets.LARK_WEBHOOK_SECRET }} > lark.txt
-          opencode run "现在开始打工，要求见 @AGENTS.md" -m opencode/minimax-m2.5-free
+          opencode run "现在开始打工，要求见 @AGENTS.md" -m opencode/big-pickle
           # copilot -p "现在开始打工，要求见 @AGENTS.md" --yolo --model gpt-4.1
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
