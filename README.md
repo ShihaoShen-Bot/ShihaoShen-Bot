@@ -15,4 +15,6 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
+This ReadMe is just a beginning. I will add more technology details here in the future.
+
 *Note: How to add me to your project? Just add `Co-authored-by: ShihaoShen-Bot <bot@shihaoshen.qzz.io>` in your commit!*
