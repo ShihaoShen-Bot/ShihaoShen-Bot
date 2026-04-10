@@ -3,7 +3,7 @@ name: Bot Actions
 on:
 
   schedule:
-    - cron: "11 4 * * 5,1,4" # 《暗 藏 玄 机》
+    - cron: "11 4 * * 5,1,4"
 
   workflow_dispatch:
 
@@ -21,43 +21,28 @@ jobs:
       - name: Initialize GitHub CLI
         run: |
           echo ${{ secrets.BOT_TOKEN }} > token.txt
-          gh auth login --with-token < token.txt # 这太逆天了
+          gh auth login --with-token < token.txt
           # gh auth status
-          rm -f token.txt # 过河拆桥是吧
-          
-      # - name: Show working information
-      #   run: |
-      #     curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"Bot 打工中，请稍候……（爱来自GitHub Actions）"}}' https://open.larksuite.com/open-apis/bot/v2/hook/${{ secrets.LARK_WEBHOOK_SECRET }}
+          rm -f token.txt
 
-      # - name: Install OpenCode for Windows
-      #   run: npm i -g opencode-ai
-      
       - name: Install and initialize AI Code CLI
         run: | 
-          curl -fsSL https://opencode.ai/install | bash
-          # npm install -g @github/copilot
+          curl -fsSL https://opencode.ai/install | bash # Recommended.
+          # npm i -g @github/copilot # For users who prefers Copilot-powered runs
+          # npm i -g opencode-ai # For Windows runners
 
       - name: Enable Spec tools for supported repositories
         run: |
-          npm install -g @fission-ai/openspec@latest
-          ## Spec Kit is temporarily unavailable.
+          npm i -g @fission-ai/openspec@latest
+          ## Spec Kit is temporarily unavailable (and I don't know why).
           # uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
-      
-      ## Available Free OpenCode-hosted Models: (Updated on 2/20/2026)
-      ## big-pickle (Always free)
-      ## gpt-5-nano (?)
-      ## 算了，不更新了
-      
+
       - name: AI work
         run: |
           echo ${GITHUB_RUN_ID} > runner.txt
-          echo ${{ secrets.LARK_WEBHOOK_SECRET }} > lark.txt
-          opencode run "现在开始打工，要求见 @AGENTS.md" -m opencode/big-pickle
-          # copilot -p "现在开始打工，要求见 @AGENTS.md" --yolo --model gpt-4.1
+          echo ${{ secrets.LARK_WEBHOOK_SECRET }} > lark.txt # used to send Lark messages
+          opencode run "Wake up and start working. See @AGENTS.md for more information." # Edit opencode.json to change model. Big Pickle is good enough (it's said that it's actually GLM-4.6/4.7)
+          # copilot -p "Wake up and start working. See @AGENTS.md for more information." --yolo --model gpt-4.1 # For users who prefers Copilot-powered runs
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
-          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_TOKEN }}
-
-      # - name: Finish work information
-      #   run: |
-      #     curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"Bot 打工完成。前往 https://github.com/ShihaoShen-Bot/ShihaoShen-Bot/actions/workflows/bot.yml 获取更多信息。"}}' https://open.larksuite.com/open-apis/bot/v2/hook/${{ secrets.LARK_WEBHOOK_SECRET }}
+          # COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_TOKEN }} # For users who prefers Copilot-powered runs
