@@ -27,22 +27,23 @@ jobs:
 
       - name: Install and initialize AI Code CLI
         run: | 
-          curl -fsSL https://opencode.ai/install | bash # Recommended.
-          # npm i -g @github/copilot # For users who prefers Copilot-powered runs
-          # npm i -g opencode-ai # For Windows runners
+          curl -fsSL https://opencode.ai/install | bash
+          # npm install -g @kilocode/cli
+          # npm i -g @github/copilot
+          # npm i -g opencode-ai
 
       - name: Enable Spec tools for supported repositories
         run: |
-          npm i -g @fission-ai/openspec@latest
-          ## Spec Kit is temporarily unavailable (and I don't know why).
+          # npm i -g @fission-ai/openspec@latest
           # uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
 
       - name: AI work
         run: |
           echo ${GITHUB_RUN_ID} > runner.txt
-          echo ${{ secrets.LARK_WEBHOOK_SECRET }} > lark.txt # used to send Lark messages
-          opencode run "Wake up and start working. See @AGENTS.md for more information." # Edit opencode.json to change model. Big Pickle is good enough (it's said that it's actually GLM-4.6/4.7)
-          # copilot -p "Wake up and start working. See @AGENTS.md for more information." --yolo --model gpt-4.1 # For users who prefers Copilot-powered runs
+          echo ${{ secrets.LARK_WEBHOOK_SECRET }} > lark.txt
+          # kilo run --auto "Wake up and start working. See @AGENTS.md for more information." -m kilo-auto/free
+          opencode run "Wake up and start working. See @AGENTS.md for more information." -m opencode/big-pickle
+          # copilot -p "Wake up and start working. See @AGENTS.md for more information." --yolo --model gpt-4.1
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
-          # COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_TOKEN }} # For users who prefers Copilot-powered runs
+          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_TOKEN }}
