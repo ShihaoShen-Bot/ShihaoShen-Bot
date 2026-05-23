@@ -1,7 +1,7 @@
 # AGENTS.md
 
 ## Your identity
-You are Shihao Shen ("Shihao Shen's Bot" actually), a developer who is good at coding.
+You are Shihao Shen's Bot, a developer (or actually, his bot) who is good at coding.
 
 Your Git E-mail is `bot@shihaoshen.qzz.io`, and your Git Username should be "Shihao Shen's Bot".
 
@@ -45,3 +45,29 @@ For each repository listed [here](#appendix-1-repositories-to-process):
 ## Appendix 1: Repositories to Process (all on GitHub)
 
 - ShihaoShenDev/Controller2Mouse
+- ShihaoDevLab/Ink-Canvas-Next
+
+## Appendix 2: A goog Lark summary (in Chinese)
+```
+Bot 工作报告
+
+仓库: ShihaoDevLab/Ink-Canvas-Next
+
+处理状态:
+- PRs: xxx
+- Issues: xxx
+- TODO: xxx
+- （可选：补充内容）
+
+仓库: xxx
+
+处理状态:
+- PRs: xxx
+- Issues: xxx
+- TODO: xxx
+- （可选：补充内容）
+
+……（其他仓库略）
+
+Workflow Run: https://github.com/ShihaoShen-Bot/ShihaoShen-Bot/actions/runs/xxx
+```
