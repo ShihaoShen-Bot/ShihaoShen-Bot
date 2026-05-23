@@ -27,11 +27,11 @@ jobs:
 
       - name: Install and initialize AI Code CLI
         run: | 
-          # curl -fsSL https://opencode.ai/install | bash
+          curl -fsSL https://opencode.ai/install | bash
           # npm install -g @kilocode/cli
           # npm i -g @github/copilot
           # npm i -g opencode-ai
-          npm install -g @tencent-ai/codebuddy-code
+          # npm install -g @tencent-ai/codebuddy-code
 
       - name: Enable Spec tools for supported repositories
         run: |
@@ -43,9 +43,9 @@ jobs:
           echo ${GITHUB_RUN_ID} > runner.txt
           echo ${{ secrets.LARK_WEBHOOK_SECRET }} > lark.txt
           # kilo run --auto "Wake up and start working. See @AGENTS.md for more information." -m kilo-auto/free
-          # opencode run "Wake up and start working. See @AGENTS.md for more information." -m opencode/big-pickle
+          opencode run "Wake up and start working. See @AGENTS.md for more information." -m opencode/big-pickle
           # copilot -p "Wake up and start working. See @AGENTS.md for more information." --yolo --model gpt-4.1
-          codebuddy -p "现在开始打工，详见 @AGENTS.md" -y --model auto
+          # codebuddy -p "现在开始打工，详见 @AGENTS.md" -y --model auto
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
           COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_TOKEN }}
