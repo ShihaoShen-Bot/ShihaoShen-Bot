@@ -44,8 +44,7 @@ For each repository listed [here](#appendix-1-repositories-to-process):
 
 ## Appendix 1: Repositories to Process (all on GitHub)
 
-- ShihaoShenDev/Controller2Mouse
-- ShihaoDevLab/Ink-Canvas-Next
+- InterestingSpace/Ink-Canvas-Next
 
 ## Appendix 2: A goog Lark summary (in Chinese)
 ```
