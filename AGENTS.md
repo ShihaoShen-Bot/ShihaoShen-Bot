@@ -44,7 +44,7 @@ For each repository listed [here](#appendix-1-repositories-to-process):
 
 ## Appendix 1: Repositories to Process (all on GitHub)
 
-- InterestingSpace/Ink-Canvas-Next
+- None
 
 ## Appendix 2: A goog Lark summary (in Chinese)
 ```
